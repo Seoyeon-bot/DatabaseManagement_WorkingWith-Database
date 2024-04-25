@@ -202,7 +202,7 @@ public class RelationalDatabase {
 			return new Aggregate(o, groupingAttributes, attributeDefinitions);
 		if (this.hasAggregateFunctions(attributeDefinitions))
 			return new Aggregate(o, null, attributeDefinitions);
-		if (attributeDefinitions == null || attributeDefinitions.size() == 1 && attributeDefinitions.get(0).equals("*"))
+		if (attributeDefinitions == null || attributeDefinitions.size() == 1 && "*".equals(attributeDefinitions.get(0)))
 			return o;
 		return new Projection(o, attributeDefinitions);
 	}
